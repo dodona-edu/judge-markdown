@@ -2,8 +2,6 @@
 
 set -euxo
 
-sleep 2
-
 config=$(cat -)
 file=$(echo "$config" | jq -r '."source"')
 language=$(echo "$config" | jq -r '."natural_language"')
