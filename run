@@ -3,8 +3,8 @@
 set -eu
 
 config=$(cat -)
-file=$(echo "$config" | jq -r '."source"')
-language=$(echo "$config" | jq -r '."natural_language"')
+file=$(jq -r '."source"' "$config")
+language=$(jq -r '."natural_language"' "$config")
 
 if [ "$language" = "nl" ]; then
   title="Gerenderd"
