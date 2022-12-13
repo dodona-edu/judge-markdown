@@ -13,7 +13,6 @@ content=$(cat $file)
 jq --null-input \
   --arg description "$content" \
   '{"command": "append-message", "message": {"format": "markdown", "description": $description}}'
-#echo "{\"command\": \"append-message\", \"message\": {\"format\": \"markdown\", \"description\": $content}}"
 
 echo '{"command": "close-tab"}'
 echo '{"command": "close-judgement", "accepted": true}'
