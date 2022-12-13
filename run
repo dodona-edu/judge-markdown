@@ -4,15 +4,29 @@ set -euxo
 
 sleep 2
 
-file=$(cat - | jq -r '."source"')
+config=$(cat -)
+file=$(echo "$config" | jq -r '."source"')
+language=$(echo "$config" | jq -r '."natural_language"')
+
+if [ "$language" = "nl" ]; then
+  title="Gerenderd"
+  empty="Lege oplossing"
+else
+  title="Rendered"
+  empty="Empty submission"
+fi
 
 echo '{"command": "start-judgement"}'
-echo '{"command": "start-tab", "title": "Rendered"}'
+echo "{\"command\": \"start-tab\", \"title\": \"$title\"}"
 
-content=$(cat $file)
-jq --null-input \
-  --arg description "$content" \
-  '{"command": "append-message", "message": {"format": "markdown", "description": $description}}'
+if [ -s "$file" ]; then
+  content=$(cat "$file")
+  jq --null-input \
+    --arg description "$content" \
+    '{"command": "append-message", "message": {"format": "markdown", "description": $description}}'
+else
+  echo "{\"command\": \"escalate-status\", \"status\": {\"enum\": \"wrong\", \"human\": \"$empty\"}}"
+fi
 
 echo '{"command": "close-tab"}'
-echo '{"command": "close-judgement", "accepted": true}'
+echo '{"command": "close-judgement"}'
