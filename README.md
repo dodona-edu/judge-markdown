@@ -9,3 +9,7 @@ This judge can be useful if you want text (natural language) answers from studen
 ## Which Markdown flavour is supported?
 
 The judge doesn't actually render anything, so see the [Dodona documentation](https://docs.dodona.be/nl/references/exercise-description/#markdown).
+
+## Does this "judge" anything?
+
+Yes! Empty submissions are rejected. We might also add a linter in the future.
