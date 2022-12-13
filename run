@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -euxo
+set -eux
 
 config=$(cat -)
 file=$(echo "$config" | jq -r '."source"')
