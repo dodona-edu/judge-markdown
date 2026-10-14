@@ -1,0 +1,26 @@
+{
+  "exit_code": 0,
+  "stderr": "",
+  "feedback": [
+    {
+      "command": "start-judgement"
+    },
+    {
+      "command": "start-tab",
+      "title": "Rendered"
+    },
+    {
+      "command": "append-message",
+      "message": {
+        "format": "markdown",
+        "description": "# Answer to question 3\n\nThe **space complexity** of the algorithm is *linear*, because we store one\nvalue per input element.\n\n## Steps\n\n1. Read the input\n2. Sort it\n3. Print the result\n\n- first point\n- second point\n  - nested point\n\n| Algorithm | Time       | Space |\n| --------- | ---------- | ----- |\n| Bubble    | O(n^2)     | O(1)  |\n| Merge     | O(n log n) | O(n)  |\n\n```python\ndef total(values):\n    return sum(v for v in values if v > 0)\n```\n\nSee [the documentation](https://docs.dodona.be) for more, or <kbd>Ctrl</kbd>+<kbd>C</kbd> to stop.\n\n<details>\n<summary>Extra remark</summary>\nInline <b>HTML</b> is passed through untouched.\n</details>"
+      }
+    },
+    {
+      "command": "close-tab"
+    },
+    {
+      "command": "close-judgement"
+    }
+  ]
+}

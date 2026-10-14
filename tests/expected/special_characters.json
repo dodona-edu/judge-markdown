@@ -1,0 +1,26 @@
+{
+  "exit_code": 0,
+  "stderr": "",
+  "feedback": [
+    {
+      "command": "start-judgement"
+    },
+    {
+      "command": "start-tab",
+      "title": "Rendered"
+    },
+    {
+      "command": "append-message",
+      "message": {
+        "format": "markdown",
+        "description": "Quotes: \"double\" and 'single'\nBackslashes: C:\\temp\\new \\\\ \\\" \\u00e9\nDollar: $HOME ${HOME} $1 $? $$\nSubstitution: $(echo pwned) `echo pwned`\nTab:\tseparated\tby\ttabs\nUnicode: café naïve 日本語 🎉👍\nLiterals: %s %d \\n \\t\nGlob and braces: * ? [a-z] {a,b}\nBraces: {\"json\": true}"
+      }
+    },
+    {
+      "command": "close-tab"
+    },
+    {
+      "command": "close-judgement"
+    }
+  ]
+}
