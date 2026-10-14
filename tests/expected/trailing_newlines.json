@@ -1,0 +1,26 @@
+{
+  "exit_code": 0,
+  "stderr": "",
+  "feedback": [
+    {
+      "command": "start-judgement"
+    },
+    {
+      "command": "start-tab",
+      "title": "Rendered"
+    },
+    {
+      "command": "append-message",
+      "message": {
+        "format": "markdown",
+        "description": "last line"
+      }
+    },
+    {
+      "command": "close-tab"
+    },
+    {
+      "command": "close-judgement"
+    }
+  ]
+}

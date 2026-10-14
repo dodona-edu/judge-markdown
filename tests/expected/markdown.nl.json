@@ -1,0 +1,26 @@
+{
+  "exit_code": 0,
+  "stderr": "",
+  "feedback": [
+    {
+      "command": "start-judgement"
+    },
+    {
+      "command": "start-tab",
+      "title": "Gerenderd"
+    },
+    {
+      "command": "append-message",
+      "message": {
+        "format": "markdown",
+        "description": "# Mijn antwoord\n\nDe **ruimtecomplexiteit** is *lineair*.\n\n- eerste punt\n- tweede punt\n\n```python\nprint(\"hallo\")\n```"
+      }
+    },
+    {
+      "command": "close-tab"
+    },
+    {
+      "command": "close-judgement"
+    }
+  ]
+}

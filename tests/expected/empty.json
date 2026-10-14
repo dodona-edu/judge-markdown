@@ -1,0 +1,26 @@
+{
+  "exit_code": 0,
+  "stderr": "",
+  "feedback": [
+    {
+      "command": "start-judgement"
+    },
+    {
+      "command": "start-tab",
+      "title": "Rendered"
+    },
+    {
+      "command": "escalate-status",
+      "status": {
+        "enum": "wrong",
+        "human": "Empty submission"
+      }
+    },
+    {
+      "command": "close-tab"
+    },
+    {
+      "command": "close-judgement"
+    }
+  ]
+}
