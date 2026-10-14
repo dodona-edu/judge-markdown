@@ -8,3 +8,10 @@ jobs:
     uses: ./.github/workflows/e2e.yml
     with:
       ref: ${{ github.sha }}
+
+  integration-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Run the linters
+        run: ./devel/check.sh

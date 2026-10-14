@@ -24,4 +24,6 @@ IMAGE=my-image devel/run-tests-in-image.sh     # another image
 UPDATE_EXPECTED=1 devel/run-tests-in-image.sh  # rewrite the expected output
 ```
 
+`devel/check.sh` runs shellcheck on `run` and the devel scripts, as CI does.
+
 docker-images runs the suite on candidate `dodona-java` images before publishing them.
