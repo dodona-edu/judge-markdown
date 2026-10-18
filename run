@@ -18,10 +18,10 @@ echo '{"command": "start-judgement"}'
 echo "{\"command\": \"start-tab\", \"title\": \"$title\"}"
 
 if [ -s "$file" ]; then
-  content=$(cat "$file")
+  # --rawfile, not --arg: an argument over 128 KiB fails to exec. \z, not $: $ also matches before a newline.
   jq --null-input \
-    --arg description "$content" \
-    '{"command": "append-message", "message": {"format": "markdown", "description": $description}}'
+    --rawfile description "$file" \
+    '{"command": "append-message", "message": {"format": "markdown", "description": ($description | sub("\\n+\\z"; ""))}}'
 else
   echo "{\"command\": \"escalate-status\", \"status\": {\"enum\": \"wrong\", \"human\": \"$empty\"}}"
 fi
