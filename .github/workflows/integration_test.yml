@@ -3,6 +3,9 @@ name: Integration test
 on:
   push:
 
+permissions:
+  contents: read
+
 jobs:
   integration-test:
     uses: ./.github/workflows/e2e.yml
@@ -13,5 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
       - name: Run the linters
         run: ./devel/check.sh
