@@ -10,6 +10,7 @@ jobs:
   integration-test:
     uses: ./.github/workflows/e2e.yml
     with:
+      image: ghcr.io/dodona-edu/dodona-markdown:live
       ref: ${{ github.sha }}
 
   integration-lint:
