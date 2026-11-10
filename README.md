@@ -19,7 +19,7 @@ Yes! Empty submissions are rejected. We might also add a linter in the future.
 `tests/cases/*.md` are submissions that the judge runs on; `tests/expected/*.json` holds the feedback each should produce (a case named `<case>.nl.md` runs with Dutch as natural language). The suite runs as root inside the `dodona-markdown` image, like CI: `devel/run-tests-in-image.sh` starts the image and runs `devel/run-tests.sh` in it.
 
 ```
-devel/run-tests-in-image.sh                    # ghcr.io/dodona-edu/dodona-markdown:latest
+devel/run-tests-in-image.sh                    # ghcr.io/dodona-edu/dodona-markdown:live
 IMAGE=my-image devel/run-tests-in-image.sh     # another image
 UPDATE_EXPECTED=1 devel/run-tests-in-image.sh  # rewrite the expected output
 ```
