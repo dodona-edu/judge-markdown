@@ -20,7 +20,8 @@
       "command": "close-tab"
     },
     {
-      "command": "close-judgement"
+      "command": "close-judgement",
+      "accepted": false
     }
   ]
 }

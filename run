@@ -17,14 +17,17 @@ fi
 echo '{"command": "start-judgement"}'
 echo "{\"command\": \"start-tab\", \"title\": \"$title\"}"
 
+close_extra=
+
 if [ -s "$file" ]; then
   # --rawfile, not --arg: an argument over 128 KiB fails to exec. \z, not $: $ also matches before a newline.
   jq --null-input \
     --rawfile description "$file" \
     '{"command": "append-message", "message": {"format": "markdown", "description": ($description | sub("\\n+\\z"; ""))}}'
 else
+  close_extra=', "accepted": false'
   echo "{\"command\": \"escalate-status\", \"status\": {\"enum\": \"wrong\", \"human\": \"$empty\"}}"
 fi
 
 echo '{"command": "close-tab"}'
-echo '{"command": "close-judgement"}'
+echo "{\"command\": \"close-judgement\"$close_extra}"
